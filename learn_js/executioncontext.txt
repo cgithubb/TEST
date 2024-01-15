@@ -1,0 +1,73 @@
+JavaScript Execution Context
+// Shows how javascript works
+
+
+.1 Global execution Context or global environment (this)
+
+.2 Function execution Context
+
+.3 Eval execution Context
+
+.
+
+
+ {} -> Memory creation phase //creation of memory and allocation 
+    -> execution phase // execution of code
+
+for code like 
+    let val1 = 10;
+    let val2 = 5;
+
+    function add(num1, num2){
+        let total =val1+val2;
+        return total;
+    }
+
+    let res1 = add(val1, val2);
+    let res2 = add(10, 3);
+
+-------> this is what happens
+
+    1. global execution -> (this is created)
+
+    2. memory phase {
+        val1 = undefined 
+        val2 = undefined
+        add = undefined
+        res1 = undefined
+        res2 = undefined
+    }
+
+    3. execution phase
+        val1 = 10;
+        val2 = 5;
+        res1 = add --> new execution context {new var env (memoryphase), new execution thread(execution phase)}
+
+        res2 = add --> new execution context {new var env (memoryphase), new execution thread(execution phase)}
+
+res1 -->
+memory phase -> val1 = undefined    execution phase ->num1=10
+                val2 = undefined                      num2=5
+                total = undefined                   total=15
+
+after this work this context is deleted
+
+
+res2 -->
+memory phase -> val1 = undefined    execution phase ->num1=10
+                val2 = undefined                      num2=3
+                total = undefined                   total=13
+
+after this work this context is deleted.
+
+
+
+// --------------- call stacks --------------
+
+stacks of functions that happens in file
+
+suppose stack   [  two()  ]
+                [  one()  ]
+                [globalexe]            
+ 
+ last in first out (LIFO)
