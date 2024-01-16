@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 2</title>
+</head>
+<body style="background-color: #212121; color: white">
+
+    
+
+    
+</body>
+
+<script>
+
+    const ulist = document.createElement('ul');
+    const list = document.createElement('li');
+    list.innerHTML = 'GameStop';
+    
+    const list1 = document.createElement('li');
+    list1.innerHTML = 'NonStop';
+
+    const list2= document.createElement('li');
+    list2.innerHTML = 'NeverStop';
+    
+    console.log(ulist);
+
+    console.log(list);
+
+    ulist.appendChild(list);
+    ulist.appendChild(list1);
+    ulist.appendChild(list2);
+
+    document.body.appendChild(ulist);
+
+    console.log(ulist);
+
+</script>
+</html>
