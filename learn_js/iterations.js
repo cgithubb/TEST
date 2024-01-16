@@ -55,10 +55,30 @@ const arr = [1,2,4,3,5,6];
 
 // (for of) loop
 for (const i of arr) {
-    console.log(i);
+    // console.log(i);
 }
 
 // maps
 
 const map = new Map()
-// map.
+map.set('In', 'India');
+map.set('USA', 'United States ');
+map.set('Fr', 'France');
+
+
+// console.log(map);
+
+for(const i of map) {
+    console.log(i);
+}
+
+const myobject = {
+    gameOne : 'NFS',
+    gametwo : 'spiderman'
+}
+
+for(const game of myobject){    // objects are not iteratable
+    console.log(game);
+}
+
+
