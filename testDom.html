@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Learn</title>
+</head>
+<body>
+    <input type="text" class='inp'>
+    <input type="submit" onclick="addLang(document.querySelector('.inp').value)" />
+    <ul class="Ulist"></ul>
+</body>
+
+
+<script>
+ let name = document.querySelector('.inp').value;
+ console.log(name);
+    function addLang(langName) {
+        const list = document.createElement('li');
+        list.innerHTML = `${langName}`;
+        document.querySelector('.Ulist').appendChild(list);
+        // console.log(document.querySelector('.inp').value);
+    }
+
+</script>
+</html>
